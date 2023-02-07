@@ -1,34 +1,103 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import logo from "/logo.svg"
+import c0 from "/images/c0.jpg"
+import c1 from "/images/c1.jpg"
+import c2 from "/images/c2.jpg"
+import c3 from "/images/c3.jpg"
+
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import {Slider} from "./slider";
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+function App() {
+    // const [count, setCount] = useState(0)
+
+    return (
+        <div className="App">
+            <nav role="navigation">
+                <div className="nav__wrapper">
+                    <img className="logo" src={logo} alt=""/>
+                    <span className="phone">+7 (495) 495-49-54</span>
+                </div>
+            </nav>
+            <main>
+                <section>
+                    <h2>ut aliquip ex ea commodo consequat</h2>
+                    <article>
+                        <div className="image__wrapper">
+                            <img src={c0} alt=""/>
+                        </div>
+                        <div className="paragraph">
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                            <p>
+                                Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum
+                            </p>
+                        </div>
+                    </article>
+                    <article>
+                        <div className="image__wrapper">
+                            <img src={c1} alt=""/>
+                        </div>
+                        <div className="paragraph">
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                            <p>
+                                Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum
+                            </p>
+                        </div>
+                    </article>
+                </section>
+
+                <section>
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <Slider/>
+                </section>
+
+                <section>
+                    <h2>ut aliquip ex ea commodo consequat</h2>
+                    <article>
+                        <div className="image__wrapper">
+                            <img src={c2} alt=""/>
+                        </div>
+                        <div className="paragraph">
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                            <p>
+                                Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum
+                            </p>
+                        </div>
+                    </article>
+                    <article>
+                        <div className="image__wrapper">
+                            <img src={c3} alt=""/>
+                        </div>
+                        <div className="paragraph">
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                            <p>
+                                Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum
+                            </p>
+                        </div>
+                    </article>
+                </section>
+            </main>
+            <footer>
+                <span>© TEST, 1022–2022</span>
+            </footer>
+        </div>
+    )
 }
 
 export default App
