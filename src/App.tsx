@@ -1,4 +1,9 @@
-import logo from "/logo.svg"
+import {Slider} from "./slider"
+import {Icon} from "../components/ui/icon"
+
+import Logo from "/public/logo.svg"
+import Phone from "/public/phone.svg"
+
 import c0 from "/images/c0.jpg"
 import c1 from "/images/c1.jpg"
 import c2 from "/images/c2.jpg"
@@ -6,16 +11,14 @@ import c3 from "/images/c3.jpg"
 
 import './App.css'
 
-import {Slider} from "./slider";
-
 function App() {
-    // const [count, setCount] = useState(0)
 
     return (
         <div className="App">
             <nav role="navigation">
                 <div className="nav__wrapper">
-                    <img className="logo" src={logo} alt=""/>
+                    <Icon className="logo-icon" Svg={Logo}/>
+                    <Icon className="phone-icon" Svg={Phone}/>
                     <span className="phone">+7 (495) 495-49-54</span>
                 </div>
             </nav>
@@ -32,6 +35,8 @@ function App() {
                                 Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                                 dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            </p>
+                            <p>
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
                                 mollit anim id est laborum
                             </p>
@@ -47,6 +52,8 @@ function App() {
                                 Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                                 dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            </p>
+                            <p>
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
                                 mollit anim id est laborum
                             </p>
@@ -71,6 +78,8 @@ function App() {
                                 Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                                 dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            </p>
+                            <p>
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
                                 mollit anim id est laborum
                             </p>
@@ -86,6 +95,8 @@ function App() {
                                 Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                                 dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            </p>
+                            <p>
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
                                 mollit anim id est laborum
                             </p>

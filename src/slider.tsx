@@ -15,41 +15,50 @@ import slider7 from "/images/slider/7.jpg"
 
 import 'swiper/css'
 
-const CONTAINER_WIDTH = 1327
+const DESKTOP_CONTAINER_WIDTH = 1327
+
+const calcSliderOffset = (maxWidth: number) => {
+    const w = window.innerWidth
+    return w > maxWidth ? (w - maxWidth) / 2 : 0
+}
+
+const breakpoints = {
+    376: {
+        slidesPerView: 4.5,
+        spaceBetween: 40,
+        slidesPerGroup: 2,
+        slidesOffsetBefore: calcSliderOffset(DESKTOP_CONTAINER_WIDTH),
+        width: window.innerWidth - calcSliderOffset(DESKTOP_CONTAINER_WIDTH),
+        speed: 900
+    },
+}
 
 export const Slider = () => {
     const SliderRef = useRef<SwiperRef>(null)
 
-    const calcSliderOffset = () => {
-        const w = window.innerWidth
-        return w > CONTAINER_WIDTH ? (w - CONTAINER_WIDTH) / 2 : 0
-    }
-
     const onTransitionEnd = (swiper: SwiperClass) => {
         if (swiper.progress === 0 || swiper.progress === 1) {
-            swiper.disable()
+            swiper.mousewheel.disable()
         }
 
-    }
-
-    const onTransitionStart = (swiper: SwiperClass, e: WheelEvent) => {
-        if (swiper.progress === 0 && e?.deltaY > 0 || swiper.progress === 1 && e?.deltaY < 0) {
-            swiper.enable()
-        }
     }
 
     useEffect(() => {
         const handleOnScroll = (e: WheelEvent) => {
-            // @ts-ignore
-            if (!SliderRef.current?.swiper.enabled && !e.path[3].classList.contains("slider") ||
-                // @ts-ignore
-                e.path[3].classList.contains("slider") && (
-                    SliderRef.current?.swiper.progress == 0 && e?.deltaY > 0 ||
-                    SliderRef.current?.swiper.progress == 1 && e?.deltaY < 0
-                )
+            const target = e.target as Element
+            const swiper = SliderRef.current?.swiper
+
+            if (!swiper?.mousewheel.enabled && (
+                target.classList.contains("slider") ||
+                target.classList.contains("swiper-wrapper") ||
+                (target.parentNode as Element).classList.contains("swiper-slide")
+            ) && (
+                swiper?.progress == 0 && e?.deltaY > 0 ||
+                swiper?.progress == 1 && e?.deltaY < 0
+            )
             ) {
                 e.preventDefault()
-                SliderRef.current?.swiper.enable()
+               swiper.mousewheel.enable()
             }
         }
 
@@ -62,15 +71,13 @@ export const Slider = () => {
             ref={SliderRef}
             className="slider"
             modules={[Mousewheel]}
-            slidesPerView={4.5}
-            slidesOffsetBefore={calcSliderOffset()}
-            width={window.innerWidth - calcSliderOffset()}
-            spaceBetween={40}
-            slidesPerGroup={2}
-            speed={900}
+            slidesPerView={1.5}
+            slidesOffsetBefore={20}
+            width={window.innerWidth - 20}
+            spaceBetween={30}
+            speed={600}
             grabCursor
-            mousewheel={{releaseOnEdges: false}}
-            onScroll={onTransitionStart}
+            breakpoints={breakpoints}
             onTransitionEnd={onTransitionEnd}
         >
             <SwiperSlide><img src={slider0} alt=""/></SwiperSlide>
