@@ -1,5 +1,5 @@
 import {Slider} from "./slider"
-import {Icon} from "../components/ui/icon"
+import {Icon} from "./components/ui/icon"
 
 import Logo from "/public/logo.svg"
 import Phone from "/public/phone.svg"
